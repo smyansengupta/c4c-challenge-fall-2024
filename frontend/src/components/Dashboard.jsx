@@ -15,14 +15,19 @@ function Dashboard() {
       method: 'GET',
     })
     .then((res) => res.json())
+    .then((res) => setPartners(res))
   }, [])
 
   return (
-    <div id="main-content">
-      <div id="main-partners-grid">
-        <PartnerTile partnerData={{}} />
+    partners.forEach(partner => {
+      <div id="main-content">
+        <div id="main-partners-grid">
+          <PartnerTile partnerData={{
+            "name": partner.name
+          }} />
+        </div>
       </div>
-    </div>
+    })
   )
 }
 

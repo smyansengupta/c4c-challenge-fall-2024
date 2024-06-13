@@ -4,13 +4,14 @@ const app = express();
 const port = 4000;
 
 // Some partner data
-const partners = {
+const partners = [];
+partners.push({
   "sftt": {
     "thumbnailUrl": "https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sfft-project-page.png",
     "name": "Speak For The Trees",
     "description": "Speak for the Trees Boston aims to improve the size and health of the urban forest in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They work with volunteers to inventory (collect data) trees, plant trees, and educate those about trees. C4C has built a tree stewardship application for SFTT that allows users to participate in conserving Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for.",
   }
-}
+});
 
 /* 
   APPLICATION MIDDLEWARE
@@ -35,6 +36,22 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   res.status(200).send(partners);
+})
+
+app.get('/partners/:partner', (req, res) => {
+  const partnerName = req.params.partner;
+  let found = false;
+
+  partners.forEach(partner => {
+    if (partner.name == partnerName) {
+      res.status(200).send(partner);
+      found = true;
+    }
+  })
+
+  if (!found) {
+    res.status(400).send(`Partner with name ${partnerName} not found`);
+  }
 })
 
 // Start the backend

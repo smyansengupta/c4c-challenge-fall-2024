@@ -9,10 +9,12 @@ function PartnerTile({ partnerData }) {
 
   return (
     <div className="partner-tile">
-      <img className="partner-thumbnail" src='' />
+      <img className="partner-thumbnail" src={partnerData.imageLink} />
       <hr />
       <div className="partner-info">
-        This is some placeholder content - you'll need to replace the content here with actual partner information.
+        <h1>{partnerData.name}</h1>
+        <h2>{partnerData.isActive ? "Active" : "Inactive"}</h2>
+        <p>{partnerData.description}</p>
       </div>
     </div>
   )
