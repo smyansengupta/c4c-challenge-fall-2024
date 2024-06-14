@@ -11,8 +11,8 @@ function PartnerTile({ partnerData }) {
       <img className="partner-thumbnail" src={partnerData.imageLink} alt={`${partnerData.name} logo`} />
       <hr />
       <div className="partner-info">
-        <h1>{partnerData.name}</h1>
-        <h2>{partnerData.isActive ? "Active" : "Inactive"}</h2>
+        <h2>{partnerData.name}</h2>
+        <h4>{partnerData.isActive ? "Active" : "Inactive"}</h4>
         <p>{partnerData.description}</p>
       </div>
     </div>

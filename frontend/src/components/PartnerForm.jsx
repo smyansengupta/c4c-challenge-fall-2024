@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import NavButton from './NavButton';
 
 function PartnerForm() {
     const [name, setName] = useState('');
@@ -47,7 +49,7 @@ function PartnerForm() {
             <br></br>
 
             {/* Button to save data */}
-            <NavButton destination='/results' text='Add Partner Organization' onChange={addPartner}></NavButton>
+            <NavButton destination='/' text='Save' onClick={addPartner} />
         </div>
     )
 }
