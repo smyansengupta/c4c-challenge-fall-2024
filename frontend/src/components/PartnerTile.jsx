@@ -6,10 +6,9 @@ import React from 'react';
 */
 
 function PartnerTile({ partnerData }) {
-
   return (
     <div className="partner-tile">
-      <img className="partner-thumbnail" src={partnerData.imageLink} />
+      <img className="partner-thumbnail" src={partnerData.imageLink} alt={`${partnerData.name} logo`} />
       <hr />
       <div className="partner-info">
         <h1>{partnerData.name}</h1>

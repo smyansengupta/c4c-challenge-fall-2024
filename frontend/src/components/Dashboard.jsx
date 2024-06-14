@@ -6,8 +6,7 @@ import PartnerTile from './PartnerTile';
   including information on each partner
 */
 function Dashboard() {
-
-  const [partners, setPartners] = useState({});
+  const [partners, setPartners] = useState([]);
 
   // Load all partners on initial page load 
   useEffect(() => {
@@ -15,20 +14,21 @@ function Dashboard() {
       method: 'GET',
     })
     .then((res) => res.json())
-    .then((res) => setPartners(res))
-  }, [])
+    .then((data) => {
+      setPartners(data);
+    })
+    .catch((error) => console.error('Error fetching partners:', error));
+  }, []);
 
   return (
-    partners.forEach(partner => {
-      <div id="main-content">
-        <div id="main-partners-grid">
-          <PartnerTile partnerData={{
-            "name": partner.name
-          }} />
-        </div>
+    <div id="main-content">
+      <div id="main-partners-grid">
+        {partners.map((partner) => (
+          <PartnerTile key={partner.name} partnerData={partner} />
+        ))}
       </div>
-    })
-  )
+    </div>
+  );
 }
 
 export default Dashboard;
