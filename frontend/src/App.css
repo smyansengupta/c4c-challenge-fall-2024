@@ -10,15 +10,17 @@
   width: 1000px;
   padding: 20px 30px;
   margin: auto;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
 }
 
 #main-partners-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
 }
 
 h1.title {
@@ -32,7 +34,7 @@ h1.title {
 
 .partner-tile {
   width: 450px;
-  height: 400px;
+  height: flex;
 
   display: flex;
   flex-direction: column;
@@ -52,4 +54,9 @@ h1.title {
 
 .partner-info {
   font-size: 0.9em;
+}
+
+.nav-buttons {
+  display: flex;
+  padding: 25px;
 }

@@ -13,7 +13,7 @@ function App() {
       <Router>
           <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/add" element={<PartnerForm />} />
+              <Route path="/add-partner" element={<PartnerForm />} />
           </Routes>
       </Router>
     </>
