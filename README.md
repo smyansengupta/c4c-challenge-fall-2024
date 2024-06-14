@@ -1,22 +1,22 @@
-This is the starter code for Code4Community's technical challenge for Fall 2024. 
-For more detailed information about each of the parts of this starter code, check out the [`INFO.md`](INFO.md) file
+# C4C Challenge Fall 2024
 
-## Prerequisites
+## How to start the application:
+- Make sure to have React, Express.js, and npm installed.
+- Run `npm run dev` to start the application.
 
-If you don't have them already, you'll need to install Node.js/NPM and Git:
-- Node.js + NPM - install [here](https://nodejs.org/en/download/package-manager) (we highly recommend using at least Node 18.0.0 + NPM 8.6.0)
-   - You can choose to install via the command line under "Package Manager", or download an installer under "Prebuilt Installer"
-   - Node and NPM are installed together
-- Git - install [here](https://git-scm.com/downloads)
+## High-level overview:
+- Displays the name, logo, description, and active/inactive statys of C4C partner organizations.
+- Allows the user to add new partner organizations.
 
-## Setup Instructions
+## Design decisions:
+- All content is arranged on one page, using partner tiles. The partner form is on a separate page with text-based inputs and a button to send it to the server.
 
-1. Clone this repo on to your computer. You can do so with the [desktop app](https://desktop.github.com/), or in a terminal with the following:
-```
-git clone https://github.com/huang0h/c4c-challenge-fall-2024.git
-```
-2. In a terminal, run `npm install` **at the root of this project** to install the required packages
-3. Run `npm run dev` **at the root of this project** to start the app locally
-4. Visit `http://localhost:3000` to view the website
-    
-    4a. The backend will be available at `http://localhost:4000`
+## Reflection:
+### What I learned:
+- This was my first time working with both frontend and backend; in the past I have only done one or the other for projects.
+### What I would have done differently with more time:
+- Spend more time properly integrating the frontend and backend.
+- Make the website look less basic.
+### Issues:
+- Most issues I ran into involved getting React and Express to work with each other. This resulted in me learning how to work with Express get and post endpoints from react components.
+- I also ran into issues with information not being displayed at all on localhost. The solution to this was using a router and navigation buttons, which is something I had also used in a previous project.
